@@ -1,0 +1,24 @@
+name: flutter_ui_trace
+description: A new Flutter application.
+version: 1.0.0+1
+environment:
+  sdk: ">=2.6.0-dev <3.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.2
+  pedantic_mono: ^1.4.1 # linter
+  mono_kit: ^0.11.0 # utils
+  # for Provider
+  provider: ^3.2.0
+  subscription_holder: ^1.0.0
+  # for Redux
+  redux: ^3.0.0
+  redux_logging: ^0.3.0
+  redux_types: ^0.2.1
+  redux_navigator: ^0.2.0
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+flutter:
+  uses-material-design: true
