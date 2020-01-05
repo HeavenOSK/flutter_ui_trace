@@ -7,41 +7,41 @@ class ListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        const SizedBox(width: 32),
+        Expanded(
+          child: _buildContent(),
+        ),
+        Icon(
+          Icons.navigate_next,
+          size: 32,
+          color: Colors.black.withOpacity(0.3),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildContent() {
     return Container(
       decoration: BoxDecoration(
         border: Border(
-          bottom: BorderSide(
-            width: 0.5,
+          top: BorderSide(
+            width: 0.15,
             color: Colors.black.withOpacity(0.3),
           ),
         ),
       ),
       padding: const EdgeInsets.symmetric(vertical: 8),
-      child: Row(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          const SizedBox(width: 32),
-          Expanded(
-            child: _buildContent(),
-          ),
-          Icon(
-            Icons.navigate_next,
-            size: 32,
-            color: Colors.black.withOpacity(0.3),
-          ),
+        children: [
+          _buildTitleRow(),
+          _buildHeading(),
+          _buildMessage(),
         ],
       ),
-    );
-  }
-
-  Column _buildContent() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        _buildTitleRow(),
-        _buildHeading(),
-        _buildMessage(),
-      ],
     );
   }
 
