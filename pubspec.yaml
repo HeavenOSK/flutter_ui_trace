@@ -9,6 +9,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   pedantic_mono: ^1.4.1 # linter
   mono_kit: ^0.11.0 # utils
+  flutter_sticky_header: ^0.4.0
   # for Provider
   provider: ^3.2.0
   subscription_holder: ^1.0.0
