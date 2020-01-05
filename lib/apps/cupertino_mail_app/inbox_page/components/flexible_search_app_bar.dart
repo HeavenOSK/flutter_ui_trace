@@ -44,15 +44,22 @@ class _Title extends StatelessWidget {
       width: double.infinity,
       alignment: Alignment.centerLeft,
       padding: const EdgeInsets.only(left: 20),
-      child: FittedBox(
-        fit: BoxFit.fitHeight,
-        child: Text(
-          '受信',
-          style: TextStyle(
-            fontSize: 40,
-            fontWeight: FontWeight.bold,
+      child: Column(
+        children: <Widget>[
+          const SizedBox(height: 8),
+          Expanded(
+            child: FittedBox(
+              fit: BoxFit.fitHeight,
+              child: Text(
+                '受信',
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

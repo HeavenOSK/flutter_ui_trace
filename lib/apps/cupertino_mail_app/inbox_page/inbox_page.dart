@@ -5,6 +5,8 @@ import 'package:provider/provider.dart';
 
 import 'components/flexible_search_app_bar.dart';
 
+// TODO(HeavenOSK): 1.検索窓が中途半端なところで止まらないようにする
+// TODO(HeavenOSK): 2.NavigationBarの色とelevationを動的に変更する
 class InboxPage extends StatelessWidget {
   const InboxPage._({Key key}) : super(key: key);
 
@@ -30,6 +32,12 @@ class _Scaffold extends StatelessWidget {
     return Scaffold(
       appBar: CupertinoNavigationBar(
         middle: _HeaderTitle.withDependencies(controller),
+        trailing: Text(
+          '編集',
+          style: TextStyle(
+            color: CupertinoColors.activeBlue,
+          ),
+        ),
       ),
       body: CustomScrollView(
         controller: controller,
