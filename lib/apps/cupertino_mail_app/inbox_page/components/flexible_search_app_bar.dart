@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 const flexibleBottomAreaHeight = 60.0;
+const expandedHeight = kToolbarHeight + flexibleBottomAreaHeight;
+
 const textFieldPadding = 8.0;
 const textFieldMaxHeight = flexibleBottomAreaHeight - textFieldPadding * 2;
+
 const iconOpacityHeightRange = 8.0;
 const iconVisibleTextFieldMinimumHeight =
     textFieldMaxHeight - iconOpacityHeightRange;
@@ -15,7 +18,7 @@ class FlexibleSearchAppBar extends StatelessWidget {
     return SliverAppBar(
       pinned: false,
       backgroundColor: Colors.white,
-      expandedHeight: kToolbarHeight + flexibleBottomAreaHeight,
+      expandedHeight: expandedHeight,
       flexibleSpace: LayoutBuilder(
         builder: (context, constraints) {
           return Column(
@@ -74,7 +77,7 @@ class _SearchArea extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       alignment: Alignment.center,
       child: _TextField(
-        textFieldHeight: textFieldHeight,
+        height: textFieldHeight,
       ),
     );
   }
@@ -82,22 +85,21 @@ class _SearchArea extends StatelessWidget {
 
 class _TextField extends StatelessWidget {
   const _TextField({
-    @required this.textFieldHeight,
+    @required this.height,
     Key key,
   }) : super(key: key);
 
-  final double textFieldHeight;
+  final double height;
 
-  double get iconOpacity => textFieldHeight <= iconVisibleTextFieldMinimumHeight
+  double get iconOpacity => height <= iconVisibleTextFieldMinimumHeight
       ? 0.0
-      : (textFieldHeight - iconVisibleTextFieldMinimumHeight) /
-          iconOpacityHeightRange;
+      : (height - iconVisibleTextFieldMinimumHeight) / iconOpacityHeightRange;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       constraints: BoxConstraints(
-        maxHeight: textFieldHeight,
+        maxHeight: height,
       ),
       decoration: BoxDecoration(
         color: const Color.fromRGBO(241, 239, 242, 1),
