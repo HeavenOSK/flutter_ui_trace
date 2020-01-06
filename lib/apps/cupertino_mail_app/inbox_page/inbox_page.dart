@@ -31,7 +31,7 @@ class _Scaffold extends StatelessWidget {
 
     return Scaffold(
       appBar: CupertinoNavigationBar(
-        middle: _HeaderTitle.withDependencies(controller),
+        middle: _AppBarTitle.withDependencies(controller),
         trailing: Text(
           '編集',
           style: TextStyle(
@@ -59,13 +59,13 @@ class _Scaffold extends StatelessWidget {
   }
 }
 
-class _HeaderTitle extends StatelessWidget {
-  const _HeaderTitle._({Key key}) : super(key: key);
+class _AppBarTitle extends StatelessWidget {
+  const _AppBarTitle._({Key key}) : super(key: key);
 
   static Widget withDependencies(ScrollController controller) {
     return ChangeNotifierProvider(
       create: (_context) => controller,
-      child: const _HeaderTitle._(),
+      child: const _AppBarTitle._(),
     );
   }
 
